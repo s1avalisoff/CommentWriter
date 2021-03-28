@@ -4,7 +4,7 @@
 char* rf(char name[]){
     FILE* f;
     if((f = fopen(name, "rb")) == NULL){
-        printf("Error opening file %s", name);
+        printf("Error opening file %s\n", name);
         char* err = "fuck";
         return err;
     }
@@ -17,16 +17,16 @@ char* rf(char name[]){
     return buf;
 }
 
-int fw(char name[], char text[]){
+void fw(char name[], char text[]){
     FILE *fp;
     if((fp= fopen(name, "w"))==NULL)
     {
-        printf("Error opening file %s", name);
-        return 0;
+        printf("Error opening file %s\n", name);
+        return;
     }
     fputs(text, fp);
     fclose(fp);
-    return 0;
+    return;
 }
 
 long fl(char name[]){
@@ -35,7 +35,7 @@ long fl(char name[]){
 
     pFile = fopen(name, "rb");
     if (!pFile){
-        printf("Error opening file %s", name);
+        printf("Error opening file %s\n", name);
         return -1;
     }
     else{

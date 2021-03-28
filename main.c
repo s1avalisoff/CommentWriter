@@ -7,6 +7,10 @@ int main(int argc, char **argv){
     long cs, ms, size;
     cs = fl(argv[1]);
     ms = fl(argv[2]);
+    if(cs < 0 || ms < 0){
+        printf("Error: one of files not exists!");
+        return 1;
+    }
     size = cs + ms;
     printf("Total symbols: %ld, comment symbols: %ld, message symbols: %ld", size, cs, ms);
     char* comment = rf(argv[1]);
